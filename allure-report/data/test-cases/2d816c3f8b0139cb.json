@@ -1,0 +1,50 @@
+{
+  "uid" : "2d816c3f8b0139cb",
+  "name" : "should have id of the hero in the url on hero detailed page",
+  "fullName" : "App Tour Of Heroes.should have id of the hero in the url on hero detailed page",
+  "historyId" : "bff4ea9f0500a7b0a2076b45c403d38c",
+  "time" : {
+    "start" : 1643303374602,
+    "stop" : 1643303377518,
+    "duration" : 2916
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "newBroken" : false,
+  "newPassed" : false,
+  "retriesCount" : 0,
+  "retriesStatusChange" : false,
+  "beforeStages" : [ ],
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "suite",
+    "value" : "App Tour Of Heroes"
+  }, {
+    "name" : "testClass",
+    "value" : "App Tour Of Heroes"
+  }, {
+    "name" : "testMethod",
+    "value" : "should have id of the hero in the url on hero detailed page"
+  }, {
+    "name" : "package",
+    "value" : "App Tour Of Heroes"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "2d816c3f8b0139cb.json",
+  "parameterValues" : [ ]
+}

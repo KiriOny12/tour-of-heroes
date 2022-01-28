@@ -1,0 +1,111 @@
+{
+  "uid" : "98d3104e051c652961429bf95fa0b5d6",
+  "name" : "suites",
+  "children" : [ {
+    "name" : "App Tour Of Heroes",
+    "children" : [ {
+      "name" : "Should display edited name on blank and My Heroes page",
+      "uid" : "5b4c7def200d7ad3",
+      "parentUid" : "4390e0a6fc836df0a867197d13d96b92",
+      "status" : "passed",
+      "time" : {
+        "start" : 1643303367433,
+        "stop" : 1643303372932,
+        "duration" : 5499
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 0,
+      "retriesStatusChange" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "should display ten hero on My Heroes page",
+      "uid" : "402dc1cf25b2c90e",
+      "parentUid" : "4390e0a6fc836df0a867197d13d96b92",
+      "status" : "passed",
+      "time" : {
+        "start" : 1643303372932,
+        "stop" : 1643303373776,
+        "duration" : 844
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 0,
+      "retriesStatusChange" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "should displayed four hero in Top hero section",
+      "uid" : "1eb34838f52e5414",
+      "parentUid" : "4390e0a6fc836df0a867197d13d96b92",
+      "status" : "passed",
+      "time" : {
+        "start" : 1643303373776,
+        "stop" : 1643303374602,
+        "duration" : 826
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 0,
+      "retriesStatusChange" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "should have id of the hero in the url on hero detailed page",
+      "uid" : "2d816c3f8b0139cb",
+      "parentUid" : "4390e0a6fc836df0a867197d13d96b92",
+      "status" : "passed",
+      "time" : {
+        "start" : 1643303374602,
+        "stop" : 1643303377518,
+        "duration" : 2916
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 0,
+      "retriesStatusChange" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "should delete and add five hero",
+      "uid" : "96811ed32c3eaaf0",
+      "parentUid" : "4390e0a6fc836df0a867197d13d96b92",
+      "status" : "passed",
+      "time" : {
+        "start" : 1643303377518,
+        "stop" : 1643303382847,
+        "duration" : 5329
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 0,
+      "retriesStatusChange" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "Search hero by name",
+      "uid" : "89523fcd0447ee61",
+      "parentUid" : "4390e0a6fc836df0a867197d13d96b92",
+      "status" : "passed",
+      "time" : {
+        "start" : 1643303382847,
+        "stop" : 1643303384785,
+        "duration" : 1938
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 0,
+      "retriesStatusChange" : false,
+      "parameters" : [ ]
+    } ],
+    "uid" : "4390e0a6fc836df0a867197d13d96b92"
+  } ]
+}
