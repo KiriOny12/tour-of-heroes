@@ -1,4 +1,4 @@
-import {BlankPage} from './app.dashboard.po';
+import {DashboardPage} from './app.dashboard.po';
 import {browser} from 'protractor';
 import {HeroesPage} from './app.heroes.po';
 import {DetailsPage} from './app.details.po';
@@ -6,68 +6,66 @@ import {DetailsPage} from './app.details.po';
 declare const allure: any;
 
 
-
-
 describe('App Tour Of Heroes', () => {
-  let blank: BlankPage;
-  let heroes: HeroesPage;
-  let details: DetailsPage;
+  let dashboardPage: DashboardPage;
+  let heroesPage: HeroesPage;
+  let detailsPage: DetailsPage;
 
   beforeEach(() => {
-    blank = new BlankPage();
-    heroes = new HeroesPage();
-    details = new DetailsPage();
+    dashboardPage = new DashboardPage();
+    heroesPage = new HeroesPage();
+    detailsPage = new DetailsPage();
   });
 
   it('Should display edited name on blank and My Heroes page',  () => {
-    browser.get('/heroes');
-    heroes.getHeroesElementByPartName('Narco').click();
-    heroes.getViewDetailsBtn().click();
-    details.getNameInputElement().sendKeys('1');
-    details.getSaveBtnElement().click();
+    heroesPage.navigateTo();
+    heroesPage.getHeroesElementByPartName('Narco').click();
+    heroesPage.getViewDetailsBtn().click();
+    detailsPage.getNameInputElement().sendKeys('1');
+    detailsPage.getSaveBtnElement().click();
     browser.sleep(2000)
-    expect(heroes.getHeroesElementByPartName('Narco1').isPresent()).toBe(true);
-    blank.getPageSwitchByName('Dashboard').click();
+    expect(heroesPage.getHeroesElementByPartName('Narco1').isPresent()).toBe(true);
+    dashboardPage.getPageSwitchByName('Dashboard').click();
     browser.sleep(2000)
-    expect(blank.getHeroesElementByPartName('Narco1').isPresent()).toBe(true);
+    expect(dashboardPage.getHeroesElementByPartName('Narco1').isPresent()).toBe(true);
   });
 
   it('should display ten hero on My Heroes page', () => {
-    browser.get('/heroes');
-    expect(heroes.getHeroesElements().count()).toBe(10);
+    heroesPage.navigateTo();
+    expect(heroesPage.getHeroesElements().count()).toBe(10);
   });
 
   it('should displayed four hero in Top hero section',  () => {
-    blank.navigateTo();
-    expect(blank.getGridPadElements().count()).toBe(4);
+    dashboardPage.navigateTo();
+    expect(dashboardPage.getGridPadElements().count()).toBe(4);
   });
 
   it('should have id of the hero in the url on hero detailed page',  () => {
-    browser.get('/heroes');
-    heroes.getHeroesElements().first().click();
-    heroes.getViewDetailsBtn().click();
+    heroesPage.navigateTo();
+    heroesPage.getHeroesElements().first().click();
+    heroesPage.getViewDetailsBtn().click();
     browser.sleep(2000);
     expect(browser.getCurrentUrl()).toEqual('http://localhost:4200/detail/11');
   });
 
   it('should delete and add five hero',  () => {
-    browser.get('/heroes');
-    heroes.getHeroesDeleteBtn().then(function (items) {
+    heroesPage.navigateTo();
+    heroesPage.getHeroesDeleteBtn().then(function (items) {
       for (let i = 0; i < 5; ++i) {items[i].click();}
     });
-    expect(heroes.getHeroesElements().count()).toBe(5)
+    expect(heroesPage.getHeroesElements().count()).toBe(5)
     for (let i = 0; i < 5; ++i) {
-      heroes.getAddNewHeroesBtn().click();
-      heroes.getInput().sendKeys('Hero');
-      heroes.getSaveBtn().click();
+      heroesPage.getAddNewHeroesBtn().click();
+      heroesPage.getInput().sendKeys('Hero');
+      heroesPage.getSaveBtn().click();
     }
-    expect(heroes.getHeroesElements().count()).toBe(10)
+    expect(heroesPage.getHeroesElements().count()).toBe(10)
   });
 
   it('Search hero by name',  () => {
-    blank.navigateTo();
-    blank.getSearchInput().sendKeys('Narco');
-    blank.getSearchResult().click();
+    dashboardPage.navigateTo();
+    dashboardPage.getSearchInput().sendKeys('Narco');
+    dashboardPage.getSearchResult().click();
     expect(browser.getCurrentUrl()).toEqual('http://localhost:4200/detail/12');
   });
 
