@@ -1,7 +1,0 @@
-"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
-"passed","Thu Jan 27 19:09:34 EET 2022","Thu Jan 27 19:09:37 EET 2022","2916","","App Tour Of Heroes","","App Tour Of Heroes","should have id of the hero in the url on hero detailed page","should have id of the hero in the url on hero detailed page",""
-"passed","Thu Jan 27 19:09:32 EET 2022","Thu Jan 27 19:09:33 EET 2022","844","","App Tour Of Heroes","","App Tour Of Heroes","should display ten hero on My Heroes page","should display ten hero on My Heroes page",""
-"passed","Thu Jan 27 19:09:33 EET 2022","Thu Jan 27 19:09:34 EET 2022","826","","App Tour Of Heroes","","App Tour Of Heroes","should displayed four hero in Top hero section","should displayed four hero in Top hero section",""
-"passed","Thu Jan 27 19:09:27 EET 2022","Thu Jan 27 19:09:32 EET 2022","5499","","App Tour Of Heroes","","App Tour Of Heroes","Should display edited name on blank and My Heroes page","Should display edited name on blank and My Heroes page",""
-"passed","Thu Jan 27 19:09:37 EET 2022","Thu Jan 27 19:09:42 EET 2022","5329","","App Tour Of Heroes","","App Tour Of Heroes","should delete and add five hero","should delete and add five hero",""
-"passed","Thu Jan 27 19:09:42 EET 2022","Thu Jan 27 19:09:44 EET 2022","1938","","App Tour Of Heroes","","App Tour Of Heroes","Search hero by name","Search hero by name",""
