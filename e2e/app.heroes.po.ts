@@ -23,11 +23,11 @@ export class HeroesPage {
   }
 
   getAddNewHeroesBtn() {
-    return element(by.css('my-heroes > button')).getWebElement();
+    return element(by.css('my-heroes > button'));
   }
 
   getViewDetailsBtn() {
-    return element.all(by.css('div > button')).first().getWebElement();
+    return element.all(by.css('div > button')).first();
   }
 }
 

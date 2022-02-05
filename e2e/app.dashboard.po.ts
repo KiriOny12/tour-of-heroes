@@ -20,10 +20,10 @@ export class BlankPage {
     return element(by.css('#search-component > h4')).getText();
   }
   getSearchInput() {
-    return element(by.css('#search-box')).getWebElement();
+    return element(by.css('#search-box'));
   }
   getSearchResult() {
-    return element(by.css('div.search-result')).getWebElement();
+    return element(by.css('div.search-result'));
   }
   getPageSwitchByName(text) {
     return element(by.cssContainingText('nav > a', text));
