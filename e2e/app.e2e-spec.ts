@@ -6,8 +6,6 @@ import {DetailsPage} from './app.details.po';
 declare const allure: any;
 
 
-
-
 describe('App Tour Of Heroes', () => {
   let dashboardPage: DashboardPage;
   let heroesPage: HeroesPage;
@@ -20,7 +18,7 @@ describe('App Tour Of Heroes', () => {
   });
 
   it('Should display edited name on blank and My Heroes page',  () => {
-    browser.get('/heroes');
+    heroesPage.navigateTo();
     heroesPage.getHeroesElementByPartName('Narco').click();
     heroesPage.getViewDetailsBtn().click();
     detailsPage.getNameInputElement().sendKeys('1');
@@ -33,7 +31,7 @@ describe('App Tour Of Heroes', () => {
   });
 
   it('should display ten hero on My Heroes page', () => {
-    browser.get('/heroes');
+    heroesPage.navigateTo();
     expect(heroesPage.getHeroesElements().count()).toBe(10);
   });
 
@@ -43,7 +41,7 @@ describe('App Tour Of Heroes', () => {
   });
 
   it('should have id of the hero in the url on hero detailed page',  () => {
-    browser.get('/heroes');
+    heroesPage.navigateTo();
     heroesPage.getHeroesElements().first().click();
     heroesPage.getViewDetailsBtn().click();
     browser.sleep(2000);
@@ -51,7 +49,7 @@ describe('App Tour Of Heroes', () => {
   });
 
   it('should delete and add five hero',  () => {
-    browser.get('/heroes');
+    heroesPage.navigateTo();
     heroesPage.getHeroesDeleteBtn().then(function (items) {
       for (let i = 0; i < 5; ++i) {items[i].click();}
     });
