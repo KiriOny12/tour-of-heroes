@@ -1,9 +1,11 @@
-import {BlankPage} from './app.po';
+import {BlankPage} from './app.dashboard.po';
 import {browser} from 'protractor';
-import {HeroesPage} from './app.heroes';
-import {DetailsPage} from './app.details';
+import {HeroesPage} from './app.heroes.po';
+import {DetailsPage} from './app.details.po';
 
 declare const allure: any;
+
+
 
 
 describe('App Tour Of Heroes', () => {
