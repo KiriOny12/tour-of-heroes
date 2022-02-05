@@ -19,15 +19,15 @@ describe('App Tour Of Heroes', () => {
 
   it('Should display edited name on blank and My Heroes page',  () => {
     heroesPage.navigateTo();
-    heroesPage.getHeroesElementByPartName('Narco').click();
-    heroesPage.getViewDetailsBtn().click();
-    detailsPage.getNameInputElement().sendKeys('1');
-    detailsPage.getSaveBtnElement().click();
+    heroesPage.findHeroByName('Narco').click();
+    heroesPage.clickViewDetail();
+    detailsPage.enterName('1');
+    detailsPage.clickSave();
     browser.sleep(2000)
-    expect(heroesPage.getHeroesElementByPartName('Narco1').isPresent()).toBe(true);
-    dashboardPage.getPageSwitchByName('Dashboard').click();
+    expect(heroesPage.findHeroByName('Narco1').isPresent()).toBe(true);
+    dashboardPage.switchOn('Dashboard');
     browser.sleep(2000)
-    expect(dashboardPage.getHeroesElementByPartName('Narco1').isPresent()).toBe(true);
+    expect(dashboardPage.findHeroByName('Narco1').isPresent()).toBe(true);
   });
 
   it('should display ten hero on My Heroes page', () => {
@@ -43,29 +43,23 @@ describe('App Tour Of Heroes', () => {
   it('should have id of the hero in the url on hero detailed page',  () => {
     heroesPage.navigateTo();
     heroesPage.getHeroesElements().first().click();
-    heroesPage.getViewDetailsBtn().click();
+    heroesPage.clickViewDetail();
     browser.sleep(2000);
     expect(browser.getCurrentUrl()).toEqual('http://localhost:4200/detail/11');
   });
 
   it('should delete and add five hero',  () => {
     heroesPage.navigateTo();
-    heroesPage.getHeroesDeleteBtn().then(function (items) {
-      for (let i = 0; i < 5; ++i) {items[i].click();}
-    });
+    heroesPage.deleteHeroes(5);
     expect(heroesPage.getHeroesElements().count()).toBe(5)
-    for (let i = 0; i < 5; ++i) {
-      heroesPage.getAddNewHeroesBtn().click();
-      heroesPage.getInput().sendKeys('Hero');
-      heroesPage.getSaveBtn().click();
-    }
+    heroesPage.addHeroes(5, 'Hero')
     expect(heroesPage.getHeroesElements().count()).toBe(10)
   });
 
   it('Search hero by name',  () => {
     dashboardPage.navigateTo();
-    dashboardPage.getSearchInput().sendKeys('Narco');
-    dashboardPage.getSearchResult().click();
+    dashboardPage.searchByName('Narco');
+    dashboardPage.openSearchResult();
     expect(browser.getCurrentUrl()).toEqual('http://localhost:4200/detail/12');
   });
 
