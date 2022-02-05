@@ -1,6 +1,10 @@
-import { element, by } from 'protractor';
+import {element, by, browser} from 'protractor';
 
 export class HeroesPage {
+
+  navigateTo() {
+    return browser.get('/heroes');
+  }
 
   getSaveBtn() {
     return element.all(by.css('my-hero-detail > div > button')).last().getWebElement();
