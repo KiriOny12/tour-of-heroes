@@ -1,5 +1,5 @@
 import {DashboardPage} from './app.dashboard.po';
-import {browser} from 'protractor';
+import {browser, protractor} from 'protractor';
 import {HeroesPage} from './app.heroes.po';
 import {DetailsPage} from './app.details.po';
 
@@ -10,6 +10,7 @@ describe('App Tour Of Heroes', () => {
   let dashboardPage: DashboardPage;
   let heroesPage: HeroesPage;
   let detailsPage: DetailsPage;
+  const EC = protractor.ExpectedConditions;
 
   beforeEach(() => {
     dashboardPage = new DashboardPage();
@@ -23,10 +24,10 @@ describe('App Tour Of Heroes', () => {
     heroesPage.clickViewDetail();
     detailsPage.enterName('1');
     detailsPage.clickSave();
-    browser.sleep(2000)
+    browser.wait(EC.urlContains('/heroes'), 5000, 'url heroes err');
     expect(heroesPage.findHeroByName('Narco1').isPresent()).toBe(true);
-    dashboardPage.switchOn('Dashboard');
-    browser.sleep(2000)
+    heroesPage.switchOn('Dashboard');
+    browser.wait(EC.urlContains('/'), 5000, 'url dashboard err');
     expect(dashboardPage.findHeroByName('Narco1').isPresent()).toBe(true);
   });
 
@@ -44,7 +45,7 @@ describe('App Tour Of Heroes', () => {
     heroesPage.navigateTo();
     heroesPage.getHeroesElements().first().click();
     heroesPage.clickViewDetail();
-    browser.sleep(2000);
+    browser.wait(EC.urlContains('/detail'), 5000, 'url detail err');
     expect(browser.getCurrentUrl()).toEqual('http://localhost:4200/detail/11');
   });
 

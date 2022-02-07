@@ -16,7 +16,4 @@ export class DashboardPage {
   openSearchResult() {
     return element(by.css('div.search-result')).click();
   }
-  switchOn(text) {
-    return element(by.cssContainingText('nav > a', text)).click();
-  }
 }

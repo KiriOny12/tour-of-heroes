@@ -6,6 +6,10 @@ export class HeroesPage {
     return browser.get('/heroes');
   }
 
+  switchOn(text) {
+    return element(by.cssContainingText('nav > a', text)).click();
+  }
+
   async addHeroes(count, name) {
     for (let i = 0; i < count; ++i) {
       element(by.css('my-heroes > button')).click();
