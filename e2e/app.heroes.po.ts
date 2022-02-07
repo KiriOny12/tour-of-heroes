@@ -6,7 +6,7 @@ export class HeroesPage {
     return browser.get('/heroes');
   }
 
-  addHeroes(count, name) {
+  async addHeroes(count, name) {
     for (let i = 0; i < count; ++i) {
       element(by.css('my-heroes > button')).click();
       element(by.css('div > input')).sendKeys(name);
