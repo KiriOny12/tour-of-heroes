@@ -52,7 +52,11 @@ describe('App Tour Of Heroes', () => {
     heroesPage.navigateTo();
     heroesPage.deleteHeroes(5);
     expect(heroesPage.getHeroesElements().count()).toBe(5)
-    heroesPage.addHeroes(5, 'Hero')
+    for (let i = 0; i < 5; ++i) {
+      heroesPage.clickAdd();
+      heroesPage.fillInput('Hero');
+      heroesPage.clickSave();
+    }
     expect(heroesPage.getHeroesElements().count()).toBe(10)
   });
 

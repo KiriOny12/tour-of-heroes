@@ -8,6 +8,7 @@ const Path = require("path");
 exports.config = {
   allScriptsTimeout: 11000,
   specs: ['./e2e/**/*.e2e-spec.ts'],
+  SELENIUM_PROMISE_MANAGER: false,
   capabilities: {
     browserName: 'chrome'
   },
