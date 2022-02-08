@@ -18,50 +18,50 @@ describe('App Tour Of Heroes', () => {
     detailsPage = new DetailsPage();
   });
 
-  it('Should display edited name on blank and My Heroes page',  () => {
+  it('Should display edited name on blank and My Heroes page',  async () => {
     heroesPage.navigateTo();
     heroesPage.findHeroByName('Narco').click();
     heroesPage.clickViewDetail();
     detailsPage.enterName('1');
     detailsPage.clickSave();
     browser.wait(EC.urlContains('/heroes'), 5000, 'url heroes err');
-    expect(heroesPage.findHeroByName('Narco1').isPresent()).toBe(true);
+    expect(await heroesPage.findHeroByName('Narco1').isPresent()).toBe(true);
     heroesPage.switchOn('Dashboard');
     browser.wait(EC.urlContains('/'), 5000, 'url dashboard err');
-    expect(dashboardPage.findHeroByName('Narco1').isPresent()).toBe(true);
+    expect(await dashboardPage.findHeroByName('Narco1').isPresent()).toBe(true);
   });
 
-  it('should display ten hero on My Heroes page', () => {
+  it('should display ten hero on My Heroes page', async () => {
     heroesPage.navigateTo();
-    expect(heroesPage.getHeroesElements().count()).toBe(10);
+    expect(await heroesPage.getHeroesElements().count()).toBe(10);
   });
 
-  it('should displayed four hero in Top hero section',  () => {
+  it('should displayed four hero in Top hero section',  async () => {
     dashboardPage.navigateTo();
-    expect(dashboardPage.getGridPadElements().count()).toBe(4);
+    expect(await dashboardPage.getGridPadElements().count()).toBe(4);
   });
 
-  it('should have id of the hero in the url on hero detailed page',  () => {
+  it('should have id of the hero in the url on hero detailed page',  async () => {
     heroesPage.navigateTo();
     heroesPage.getHeroesElements().first().click();
     heroesPage.clickViewDetail();
     browser.wait(EC.urlContains('/detail'), 5000, 'url detail err');
-    expect(browser.getCurrentUrl()).toEqual('http://localhost:4200/detail/11');
+    expect(await browser.getCurrentUrl()).toEqual('http://localhost:4200/detail/11');
   });
 
-  it('should delete and add five hero',  () => {
+  it('should delete and add five hero',  async () => {
     heroesPage.navigateTo();
     heroesPage.deleteHeroes(5);
-    expect(heroesPage.getHeroesElements().count()).toBe(5)
+    expect(await heroesPage.getHeroesElements().count()).toBe(5)
     heroesPage.addHeroes(5, 'Hero')
-    expect(heroesPage.getHeroesElements().count()).toBe(10)
+    expect(await heroesPage.getHeroesElements().count()).toBe(10)
   });
 
-  it('Search hero by name',  () => {
+  it('Search hero by name',  async () => {
     dashboardPage.navigateTo();
     dashboardPage.searchByName('Narco');
     dashboardPage.openSearchResult();
-    expect(browser.getCurrentUrl()).toEqual('http://localhost:4200/detail/12');
+    expect(await browser.getCurrentUrl()).toEqual('http://localhost:4200/detail/12');
   });
 
   // afterEach(async function () {
