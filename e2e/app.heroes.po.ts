@@ -10,7 +10,7 @@ export class HeroesPage {
     return element(by.cssContainingText('nav > a', text)).click();
   }
 
-  async addHeroes(count, name) {
+    addHeroes(count, name) {
     for (let i = 0; i < count; ++i) {
       element(by.css('my-heroes > button')).click();
       element(by.css('div > input')).sendKeys(name);
@@ -18,13 +18,13 @@ export class HeroesPage {
     }
   }
 
-  // clickSave() {
-  //   element.all(by.css('my-hero-detail > div > button')).last().click();
-  // }
-  //
-  // fillInput(text) {
-  //    element(by.css('div > input')).sendKeys(text);
-  // }
+  clickSave() {
+    element.all(by.css('my-hero-detail > div > button')).last().click();
+  }
+
+  fillInput(text) {
+    return element(by.css('div > input')).sendKeys(text);
+  }
 
   findHeroByName(name) {
     return element(by.cssContainingText('my-heroes > .heroes > li', name));
@@ -39,10 +39,10 @@ export class HeroesPage {
   getHeroesElements() {
     return element.all(by.css('my-heroes > .heroes > li'));
   }
-  //
-  // clickAdd() {
-  //    element(by.css('my-heroes > button')).click();
-  // }
+
+  clickAdd() {
+     return element(by.css('my-heroes > button')).click();
+  }
 
   clickViewDetail() {
     return element.all(by.css('div > button')).first().click();
